@@ -15,3 +15,6 @@ Feature :
 
 The site was hosted in bigdaddy but no longer running. 
 
+![image capture of the website](https://github.com/rmazumder/ofoodz/blob/master/Capture.PNG)
+![image capture of the website](https://github.com/rmazumder/ofoodz/blob/master/Capture1.PNG)
+![image capture of the website](https://github.com/rmazumder/ofoodz/blob/master/Capture2.PNG)
