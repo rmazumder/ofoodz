@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>OfoodZ</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+
+    <!-- Custom Fonts -->
+
+    
+	
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+        <!-- jQuery -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+     <script src="plugins/dataTables/jquery.dataTables.js"></script>
+    <script src="plugins/dataTables/dataTables.bootstrap.js"></script>
+
+    <script src="js/admin.js"></script>
+    <link rel="stylesheet" type="text/css" href="plugins/gritter/css/jquery.gritter.css" />
+
+	 <script type="text/javascript" src="plugins/gritter/js/jquery.gritter.js"></script>
+
+  
+
+    <style>
+                      
+                .container {
+                    margin-top: 50px;
+                }
+
+                .nav-tabs > li {
+                    position:relative;    
+                }
+
+                .nav-tabs > li > a {
+                    display:inline-block;
+                }
+
+                .nav-tabs > li > span {
+                    display:none;
+                    cursor:pointer;
+                    position:absolute;
+                    right: 6px;
+                    top: 8px;
+                    color: red;
+                }
+
+                .nav-tabs > li:hover > span {
+                    display: inline-block;
+                }
+    </style>
+
+</head>
+
+<body  ng-app="dabbaApp" ng-controller="dabbaCtrl">
+<!--<div id="spinner" style="display:none;" ><img id="spinnerimg" src="img/spinner.gif" > </div>-->
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">OfoodZ</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-center">
+        <li id="menuview" class="active" ng-click="changeview('menuview')"><a href="#">Menu <span class="sr-only">(current)</span></a></li>
+        <li id= "schemeview"><a href="#" ng-click="changeview('schemeview')">Scheme</a></li>
+         <li id= "adminview"><a href="#" ng-click="changeview('adminview')">Admin Task</a></li>
+      </ul>
+   
+      <ul class="nav navbar-nav navbar-right">
+        <li><a >Logged in as,  {{logedin_user}}</a></li>
+        <li><a href="login_page.php?redirect={{redirectURL}}"  pl>Logout</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<!-- header -->
+ <div class="container" ng-show="showpage=='menuview' && userrole=='admin'" >
+    <button type="button"  ng-click="savemenu()" style="float: right; margin-right: 200px;" class="btn btn-primary btn-xs"> <span class="glyphicon glyphicon-ok"></span> Save</button>
+	
+
+    <ul class="nav nav-tabs" >
+        <li ng-repeat="(key, value) in weekdays" ng-click="select(key)">
+            <a href="#{{key}}"  data-toggle="tab" >{{key}} </a><span>x</span> </li>
+        <li><a href="#" class="add-contact" data-toggle="tab">+ Add     Weekday</a></li>
+    </ul>
+    <div class="tab-content">
+        <div ng-repeat="(key, value) in weekdays" class="tab-pane" id="{{key}}"> 
+            <hr>   
+            <button type="button"  ng-click="addMenuType()" class="btn btn-primary btn-xs"> <span class="glyphicon glyphicon-ok"></span> Add Menu Type</button>  
+            <hr>   
+
+       
+            <div ng-repeat="menu in value">
+
+                
+                <div class="panel panel-success">
+                 <div class="panel-heading">   
+                    <table class="input-group1 input-group-sm1">
+                        <tr>
+                         <td><span class="input-group-addon1">Meal Type</span>
+                         <td><input type="text" class="form-control" size="20"  ng-model="weekdays[selectedDay][$index]['name']" placeholder=""  />
+                         <td><span style="margin-left:20px;">Meal Price</span>
+                         <td><input type="text" class="form-control" size="5"  ng-model="weekdays[selectedDay][$index]['price']" placeholder=""  />
+                         <td><button style="margin-left:20px;" type="button"  ng-click="addnewItem($index)" class="btn btn-primary btn-xs"> <span class="glyphicon glyphicon-ok" ></span> Add Item</button>     
+                         <td><button style="margin-left:20px;" type="button"  ng-click="removeMenuType($index)" class="btn btn-danger btn-xs"> <span class="glyphicon glyphicon-ok" ></span> Remove Menu</button>    
+                         </tr> 
+
+                         
+
+                 </table>
+
+            </div>
+            <div class ="panel-body">
+                <table class="table table-condensed table-hover">
+                    <tr ng-repeat="item in menu['items']">
+                        <td width="30%"> <input type="text" class="form-control"  size='100'
+                            ng-model="weekdays[selectedDay][$parent.$index]['items'][$index]['name']" placeholder=""  /> 
+                        <td width ="30%"><input type="text" class="form-control" size='100'
+                            ng-model="weekdays[selectedDay][$parent.$index]['items'][$index]['Serving']" placeholder=""  /> 
+                        <td width ="30%">  <input type="text" class="form-control" size='150'   
+                            ng-model="weekdays[selectedDay][$parent.$index]['items'][$index]['image']" placeholder=""  > 
+                         <td width="5%"><img height="50px;" ng-src="{{weekdays[selectedDay][$parent.$index]['items'][$index]['image']}}" >  
+                         <td width="5%">      
+                          <button type="button"  ng-click="removeItem($parent.$index, $index)" style="float: right; margin-right: 200px;" class="btn btn-danger btn-xs"> <span class="glyphicon glyphicon-ok"></span> Remove</button>      
+                       
+                            
+                     </tr>       
+                </table>    
+            </div>
+            </div>   
+
+
+        </div>
+    </div>
+</div>
+</div>
+ <div class="container" ng-show="userrole!='admin'">
+
+    <div class="alert alert-danger">
+    <strong>Error !!</strong> You need to be Admin to view this page.  <a href="login_page.php?redirect={{redirectURL}}" type="button" class="btn   btn-primary " pl>Login</a>
+  </div>
+   
+ </div>
+
+ <div class="container" ng-show="showpage=='schemeview' && userrole=='admin'">
+		<button type="button"  ng-click="saveSchemes()" style="float: right; margin-right: 200px;" class="btn btn-primary btn-xs"> <span class="glyphicon glyphicon-ok"></span> Update  Database</button> 
+		<hr>
+		
+		 <div class="row">
+		<div  class="col-md-2">
+		Contact Number : <input type="text" class="form-control"  size='100'
+                            ng-model="contact_number" placeholder=""  /> 
+		</div>	
+		<div  class="col-md-2">		
+		 Address :<input type="text" class="form-control"  size='100'
+                            ng-model="address" placeholder=""  /> 
+		</div>	
+		</div>
+		<br>
+     <div class="panel panel-success">
+         <div class="panel-heading"> Scheme                  
+
+                <button type="button"  ng-click="addScheme()" style="float: right; margin-right: 200px;" class="btn btn-primary btn-xs"> <span class="glyphicon glyphicon-ok"></span> Add New Scheme</button>      
+                       
+
+         </div>
+
+          <div class ="panel-body">
+
+                 <table class="table table-condensed table-hover">
+                    <tr>
+                        <th>Name</th>
+                        <th>Meal Count</th>
+                        <th>Price</th>
+                        <th>Saving</th>
+                        <th>PackName</th>
+                        <th></th>
+
+                    </tr>
+
+                    <tr ng-repeat="scheme in mealschemes">
+                        <td width="20%"> <input type="text" class="form-control"  size='100'
+                            ng-model="scheme['name']" placeholder=""  /> 
+                        <td width ="10%"><input type="text" class="form-control" size='100'
+                            ng-model="scheme['mealcount']" placeholder=""  /> 
+                        <td width ="10%">  <input type="text" class="form-control" size='150'   
+                            ng-model="scheme['price']" placeholder=""  > 
+                        <td width ="30%">  <input type="text" class="form-control" size='150'   
+                            ng-model="scheme['savings']" placeholder=""  > 
+                        <td width ="20%">  <input type="text" class="form-control" size='150'   
+                            ng-model="scheme['packname']" placeholder=""  >     
+                         <td width="5%">      
+                          <button type="button"  ng-click="removeScheme($index)" style="float: right; margin-right: 200px;" class="btn btn-danger btn-xs"> <span class="glyphicon glyphicon-ok"></span> Remove</button>      
+                       
+                            
+                     </tr>       
+                </table>   
+           </div> 
+
+     </div>     
+
+     <div class="panel panel-success">
+         <div class="panel-heading"> Delivery Timmings    
+         <button type="button"  ng-click="addTimmings()" style="float: right; margin-right: 200px;" class="btn btn-primary btn-xs"> <span class="glyphicon glyphicon-ok"></span> Add New Time</button>               
+
+         </div>
+
+          <div class ="panel-body">
+             <ul class="list-group">
+              <li class="list-group-item" ng-repeat="deliverytimming in deliverytimmings">
+                <input type"text" ng-model="deliverytimming.time" value="{{deliverytimming.time}}">
+                <button type="button"  ng-click="removetimings($index)" style="float: right; margin-right: 200px;" class="btn btn-danger btn-xs"> <span class="glyphicon glyphicon-ok"></span> Remove</button>      
+              </li>
+            
+            </ul>
+                 
+           </div> 
+
+     </div>       
+
+     <div class="panel panel-success"> 
+         <div class="panel-heading"> Delivery Area 
+         <button type="button"  ng-click="addDeliveryArea()" style="float: right; margin-right: 200px;" class="btn btn-primary btn-xs"> <span class="glyphicon glyphicon-ok"></span> Add New Dilivery Area</button>               
+
+         </div>
+
+          <div class ="panel-body">
+             <ul class="list-group">
+              <li class="list-group-item" ng-repeat="deliveryArea in deliveryAreas">
+                <input type="text" ng-model="deliveryArea.name" value="{{deliveryArea.name}}">
+                <button type="button"  ng-click="removeDeliveryArea($index)" style="float: right; margin-right: 200px;" class="btn btn-danger btn-xs"> <span class="glyphicon glyphicon-ok"></span> Remove</button>      
+              </li>
+            
+            </ul>
+                 
+           </div> 
+
+     </div>       
+</div> 
+
+ <div class="container" ng-show="showpage=='adminview' && userrole=='admin'" >
+  <div class="panel panel-default">
+   <div class="panel-heading">
+   Order Details
+  </div> 
+
+  <div class="panel-body">
+   <div class="row"> 
+    <div class="col-lg-4">
+     <div class="form-group">
+      <input class="form-control" ng-model="searchkey" placeholder= "Enter order ID/Keep it blank to search last 2 month order">
+    </div>
+    </div>
+    <div class="col-lg-2">
+     <div class="form-group input-group">
+      <button type="submit"  class="btn btn-primary" ng-click="getOrder()">Search Order</button>
+    </div>
+  </div>
+  
+   </div>
+   <div class="row">
+
+     <div class="table-responsive">
+      <table class="table table-striped  table-hover display " id="ordertable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Email</th>
+            <th>Scheme</th>
+            <th>Address</th>
+            <th>Mobile</th>
+            <th>Delivery Dates</th>
+            <th>Delivery Time</th>
+            <th>Order date </th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+   </div>
+     
+  
+    <!-- /.table-responsive -->
+
+  </div>
+  <!-- /.panel-body -->
+</div>
+ </div>
+   
+   
+
+
+
+
+</body>
+
+ <script>
+    $(document).ready(function() {
+        var table = $('#ordertable').dataTable({ "order":[],"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]});
+    
+    });
+    $(function () {
+      $('[data-toggle="popover"]').popover()
+    })
+   
+
+    </script>
+
+</html>

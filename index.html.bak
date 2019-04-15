@@ -1,0 +1,939 @@
+<!doctype html>
+<!--[if lt IE 7]><html lang="en" class="no-js ie6"><![endif]-->
+<!--[if IE 7]><html lang="en" class="no-js ie7"><![endif]-->
+<!--[if IE 8]><html lang="en" class="no-js ie8"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tiffinwaale</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="shortcut icon" href="favicon.png">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="js/rs-plugin/css/settings.css">
+    <link rel="stylesheet" href="css/daterangepicker.css"> 
+    <link rel="stylesheet" href="css/berry.css">
+
+
+    <script type="text/javascript" src="js/modernizr.custom.32033.js"></script>
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ng-app="dabbaApp" ng-controller="dabbaCtrl">
+<div id="spinner" style="display:none;" ><img id="spinnerimg" src="img/spinner.gif" > </div>
+<!-- <div class="goToTop" style="display: block; opacity: 0.5;">
+Refer us
+</div>
+ -->
+
+
+<div class="contactsidebar" style="display: block; opacity: 0.5;">
+  <i class="fa fa-phone fa-lg"> 7022-95-96-45</i>
+</div>
+
+    <div class="pre-loader">
+        <div class="load-con">
+            <img src="img/berry/logo.png" class="animated fadeInDown" alt="">
+            <div class="spinner">
+              <div class="bounce1"></div>
+              <div class="bounce2"></div>
+              <div class="bounce3"></div>
+            </div>
+        </div>
+    </div>
+   
+    <header>
+        
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="fa fa-bars fa-lg"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">
+                            <img src="img/berry/logo.png" alt="" class="logo">
+                        </a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#service">Order Now</a>
+                            </li>
+                            <li><a href="#features">Why us ?</a>
+                            </li>
+                           
+                            <li><a href="#deliveryarea">Delivery Area</a>
+                            </li>
+                            <li><a href="#support">Refer us</a>
+                            </li>
+                             
+                            <li> <!-- <a href="#loginmodal"  data-toggle="modal" >Login</a> -->
+                                <a href="login_page.php" type="button" ng-hide="logedin_user != null " class="btn inverse  btn-primary headerbtn" pl>Login</a>
+                            </li>
+
+                             <li> 
+                                <a ng-show="logedin_user != null " type="button" href="php/rest/auth/getUser.php?logout=true" class="btn inverse btn-primary headerbtn" ><b>Logout {{logedin_user}} </b>
+                            </li></a>
+
+                           
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container-->
+        </nav>
+
+        
+        <!--RevSlider-->
+        <div class="tp-banner-container">
+            <div class="tp-banner" >
+                <ul>
+                    <!-- SLIDE  -->
+                    <li data-transition="fade" data-slotamount="7" data-masterspeed="1500" >
+                        <!-- MAIN IMAGE -->
+                        <img src="img/transparent.png"  alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                        <!-- LAYERS -->
+                        <!-- LAYER NR. 1 -->
+                        <div class="tp-caption lfl fadeout hidden-xs"
+                            data-x="left"
+                            data-y="bottom"
+                            data-hoffset="30"
+                            data-voffset="0"
+                            data-speed="500"
+                            data-start="700"
+                            data-easing="Power4.easeOut">
+                            <img src="img/berry/Slides/hand-berry.png" alt="">
+                        </div>
+
+                        <div class="tp-caption lfl fadeout visible-xs"
+                            data-x="left"
+                            data-y="center"
+                            data-hoffset="700"
+                            data-voffset="0"
+                            data-speed="500"
+                            data-start="700"
+                            data-easing="Power4.easeOut">
+                            <img src="img/berry/iphone-berry.png" alt="">
+                        </div>
+
+                        <div class="tp-caption large_white_bold sft" data-x="550" data-y="center" data-hoffset="0" data-voffset="-80" data-speed="500" data-start="1200" data-easing="Power4.easeOut">
+                            OFoodzzzz....
+                        </div>
+                        <!-- <div class="tp-caption large_white_bold sfr" data-x="750" data-y="center" data-hoffset="0" data-voffset="-80" data-speed="500" data-start="1400" data-easing="Power4.easeOut">
+                            Waale
+                        </div> -->
+                        <div class="tp-caption large_white_light sfb" data-x="550" data-y="center" data-hoffset="0" data-voffset="0" data-speed="1000" data-start="1500" data-easing="Power4.easeOut">
+                            <font size ="5px;">Tasty & healthy food @ finger tip.</font>
+                        </div>
+
+                        <div class="tp-caption sfb hidden-xs" data-x="550" data-y="center" data-hoffset="0" data-voffset="85" data-speed="1000" data-start="1700" data-easing="Power4.easeOut">
+                            <a href="#service" class="btn btn-primary inverse btn-lg">See Our Menu</a>
+                        </div>
+                         <div class="tp-caption sfb hidden-xs" data-x="750" data-y="center" data-hoffset="0" data-voffset="85" data-speed="1000" data-start="1700" data-easing="Power4.easeOut">
+                            <a href="#features" class="btn btn-primary inverse btn-lg">Why Us?</a>
+                        </div>
+
+                         <div class="tp-caption large_white_light sfb" data-x="550" data-y="center" data-hoffset="0" data-voffset="150" data-speed="1000" data-start="1500" data-easing="Power4.easeOut">
+                            
+                        </div>
+
+                    </li>
+                    <!-- SLIDE 2 -->
+                    <li data-transition="zoomout" data-slotamount="7" data-masterspeed="1000" >
+                        <!-- MAIN IMAGE -->
+                        <img src="img/transparent.png"  alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                        <!-- LAYERS -->
+                        <!-- LAYER NR. 1 -->
+                        <div class="tp-caption lfb fadeout hidden-xs"
+                            data-x="center"
+                            data-y="bottom"
+                            data-hoffset="0"
+                            data-voffset="0"
+                            data-speed="1000"
+                            data-start="700"
+                            data-easing="Power4.easeOut">
+                            <img src="img/berry/Slides/berry-slide2.png" alt="">
+                        </div>
+
+                        
+                        <div class="tp-caption large_white_light sft" data-x="center" data-y="250" data-hoffset="0" data-voffset="0" data-speed="1000" data-start="1400" data-easing="Power4.easeOut">
+                            Every byte <i class="fa fa-heart"></i>
+                        </div>
+                        
+                        
+                    </li>
+
+                    <!-- SLIDE 3 -->
+                   
+                    
+                </ul>
+            </div>
+        </div>
+
+
+    </header>
+
+
+    <div class="wrapper">
+
+        
+
+       
+        <section id="service">
+            <div class="container">
+
+                <div class="section-heading scrollpoint sp-effect3">
+                    <h1>Our Menu</h1>
+                    <div class="divider"></div>
+                    
+                </div>
+
+                <div class="filter scrollpoint sp-effect3">
+                    <a href="javascript:void(0)" class="button js-filter-all active">Daily Menu</a>
+                    <a href="javascript:void(0)" class="button js-filter-mon">Monday </a>
+                    <a href="javascript:void(0)" class="button js-filter-tue">Tuesday </a>
+                    <a href="javascript:void(0)" class="button js-filter-wed">Wednesday </a>
+                    <a href="javascript:void(0)" class="button js-filter-thru">Thrusday </a>
+                    <a href="javascript:void(0)" class="button js-filter-fri">Friday </a>
+                    <a href="javascript:void(0)" class="button js-filter-sat">Saturday </a>
+                    <a href="javascript:void(0)" class="button js-filter-sun">Sunday </a>
+                </div>
+                <div class="slider filtering scrollpoint sp-effect5" >
+                    <div class="mon">
+                         <h4>Monday Menu</h4>
+                        <div class="alert">
+
+                            <div class="table-responsive">
+                              <table class="table">
+                                <tr>
+                                  <td  ng-repeat="menu in weekdays['Monday']">
+                                     <div class="alert alert-info alert-block" role="alert"> {{menu['name']}}</div>
+
+                                        <table class="table table-condensed table-hover">
+                                          <tr  ng-repeat="item in menu['items']">
+                                            <td>{{item['name']}} </td>
+                                            <td>{{item['Serving']}} </td>
+                                            <td><img align="center" height=60px ng-src={{item['image']}}></td>
+                                          </tr> 
+                                       </table>   
+
+                                  </td></tr>
+                              </table>
+                        </div>
+                           </div> 
+                       
+                    </div>
+
+                   <div class="tue">
+                     <h4>Tuesday Menu</h4>
+                        <div class="alert">
+                            
+                             <div class="table-responsive">
+                              <table class="table">
+                                <tr>
+                                  <td  ng-repeat="menu in weekdays['Tuesday']">
+                                     <div class="alert alert-info alert-block" role="alert"> {{menu['name']}}</div>
+
+                                        <table class="table  table-condensed table-hover">
+                                          <tr  ng-repeat="item in menu['items']">
+                                            <td>{{item['name']}} </td>
+                                            <td>{{item['Serving']}} </td>
+                                            <td><img align="center" height=60px ng-src={{item['image']}}></td>
+                                          </tr> 
+                                       </table>   
+
+                                  </td>
+                              </table>
+                        </div>
+                        </div> 
+                       
+                    </div>
+                    <div class="wed">
+                        <h4>Wednesday Menu</h4>
+                        <div class="alert">
+                             
+                             <div class="table-responsive">
+                              <table class="table">
+                                <tr>
+                                  <td  ng-repeat="menu in weekdays['Wednesday']">
+                                     <div class="alert alert-info alert-block" role="alert"> {{menu['name']}}</div>
+
+                                        <table class="table  table-condensed table-hover">
+                                          <tr  ng-repeat="item in menu['items']">
+                                            <td>{{item['name']}} </td>
+                                            <td>{{item['Serving']}} </td>
+                                            <td><img align="center" height=60px ng-src={{item['image']}}></td>
+                                          </tr> 
+                                       </table>   
+
+                                  </td>
+                              </table>
+                        </div>
+                           </div> 
+                       
+                    </div>
+                     <div class="thru">
+                         <h4>Thrusday Menu</h4>
+                        <div class="alert">
+                            
+                             <div class="table-responsive">
+                              <table class="table">
+                                <tr>
+                                  <td  ng-repeat="menu in weekdays['Thrusday']">
+                                     <div class="alert alert-info alert-block" role="alert"> {{menu['name']}}</div>
+
+                                        <table class="table  table-condensed table-hover">
+                                          <tr  ng-repeat="item in menu['items']">
+                                            <td>{{item['name']}} </td>
+                                            <td>{{item['Serving']}} </td>
+                                            <td><img align="center" height=60px ng-src={{item['image']}}></td>
+                                          </tr> 
+                                       </table>   
+
+                                  </td>
+                              </table>
+                        </div>
+                           </div> 
+                       
+                    </div>
+                    <div class="fri">
+                        <h4>Friday Menu</h4>
+                        <div class="alert">
+                             
+                             <div class="table-responsive">
+                              <table class="table">
+                                <tr>
+                                  <td  ng-repeat="menu in weekdays['Friday']">
+                                     <div class="alert alert-info alert-block" role="alert"> {{menu['name']}}</div>
+
+                                        <table class="table  table-condensed table-hover">
+                                          <tr  ng-repeat="item in menu['items']">
+                                            <td>{{item['name']}} </td>
+                                            <td>{{item['Serving']}} </td>
+                                            <td><img align="center" height=60px ng-src={{item['image']}}></td>
+                                          </tr> 
+                                       </table>   
+
+                                  </td>
+                              </table>
+                        </div>
+                           </div> 
+                       
+                    </div>
+                    <div class="sat">
+                         <h4>Saturday Menu</h4> 
+                        <div class="alert">
+                            
+                             <div class="table-responsive">
+                              <table class="table">
+                                <tr>
+                                  <td  ng-repeat="menu in weekdays['Saturday']">
+                                     <div class="alert alert-info alert-block" role="alert"> {{menu['name']}}</div>
+
+                                        <table class="table  table-condensed table-hover">
+                                          <tr  ng-repeat="item in menu['items']">
+                                            <td>{{item['name']}} </td>
+                                            <td>{{item['Serving']}} </td>
+                                            <td><img align="center" height=60px ng-src={{item['image']}}></td>
+                                          </tr> 
+                                       </table>   
+
+                                  </td>
+                              </table>
+                        </div>
+                           </div> 
+                       
+                    </div>
+                    <div class="sun">
+                       <h4>Sunday Menu</h4> 
+                        <div class="alert">
+                            
+                             <div class="table-responsive">
+                              <table class="table">
+                                <tr>
+                                  <td  ng-repeat="menu in weekdays['Sunday']">
+                                     <div class="alert alert-info alert-block" role="alert"> {{menu['name']}}</div>
+
+                                        <table class="table  table-condensed table-hover">
+                                          <tr  ng-repeat="item in menu['items']">
+                                            <td>{{item['name']}} </td>
+                                            <td>{{item['Serving']}} </td>
+                                            <td><img align="center" height=60px ng-src={{item['image']}}></td>
+                                          </tr> 
+                                       </table>   
+
+                                  </td>
+                              </table>
+                        </div>
+                           </div> 
+                    </div>
+                   
+                </div>
+
+                   <!--  -->
+            </div>
+       </section>
+
+         <section id="order" >
+            <div id="order" class="container">
+                <div class="section-heading ">
+                    <h1>Our Price</h1>
+                    <div class="divider"></div>
+                </div>    
+                    <div class="panel panel-success">
+                        <div class="panel-heading">   Our Scheme </div>
+                        <div class="panel-body">  
+                 
+                            <div class="row">
+                                <div class="col-md-3" ng-repeat="scheme in mealschemes" id="{{scheme['name']}}">
+                                    <ul class="list-group" >
+                                      <li class="list-group-item  active">{{scheme['name']}}</li>
+                                      <li class="list-group-item">Meal Count # <span class="count">{{scheme['mealcount']}}</span></li>
+                                      <li class="list-group-item">Our Price {{scheme['price']}} </li>
+                                      <li class="list-group-item">You Save {{scheme['savings']}}  </li>
+                                      <li class="list-group-item"><!-- <button type="submit" class="btn btn-primary pull-center" ng-click="selectScheme(scheme['name'])">Build Order</button> -->
+                                        <a  class="btn btn-primary pull-center" ng-hide="userlocation == null " href="order.php?scheme={{scheme['name']}}">Build Order</a>
+                                        <a  class="btn btn-primary pull-center" ng-show="userlocation == null" ng-click="selectScheme(scheme['name'])" data-toggle="modal" data-target="#ordermodal">Build Order.</a>
+                                      </li>
+                                    </ul>
+                                </div>    
+                            </div>
+
+                              <p class="text-danger"> 
+                             <i class="fa fa-comments-o"></i> We will be collecting refundable amount of Rs 300 in cash.</p>
+                             <p class="text-danger">                           
+                                <i class="fa fa-comments-o"></i> Currently We Are Serving Only dinner                                 
+                             </p>
+                             <p class="text-danger"> 
+                              <i class="fa fa-clock-o"> For Daily order Kindly order by 6 P.M</i>
+                            </p>
+                                                  
+                        </div>
+
+                    </div> 
+                    
+                </div>
+            
+        </section>         
+
+        <section id="features">
+            <div class="container">
+                <div class="section-heading scrollpoint sp-effect3">
+                    <h1>Why Us ?</h1>
+                    <div class="divider"></div>
+                    <p>You will have enough reason but here are few.</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 scrollpoint sp-effect1">
+                        <div class="media media-left feature">
+                            <a class="pull-right" href="#">
+                                <img src="img/features/authentic.gif" height="60px;">
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">Authentic North Indian Food</h3>
+                               Home made Food ( Swaad ghar Jaisa).
+                            </div>
+                        </div>
+                        <div class="media media-left feature">
+                            <a class="pull-right" href="#">
+                               <img src="img/features/quality.gif" height="60px;">
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">Quality</h3>
+                                Food prepared with best Quality Raw material and Mineral Water.
+                            </div>
+                        </div>
+                        <div class="media media-left feature">
+                            <a class="pull-right" href="#">
+                                <img src="img/features/service.gif" height="60px;">
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">Service</h3>
+                                Your order delivered at your place on time -every time..
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-4 col-sm-4" >
+                        <img src="img/berry/iphone-berry.png" class="img-responsive scrollpoint sp-effect5" alt="">
+                    </div>
+                    <div class="col-md-4 col-sm-4 scrollpoint sp-effect2">
+                        <div class="media feature">
+                            <a class="pull-left" href="#">
+                                 <img src="img/features/bestprice.gif" height="60px;">
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">Best Price</h3>
+                               Serving you at the best affordable price.
+                            </div>
+                        </div>
+                        <div class="media feature">
+                            <a class="pull-left" href="#">
+                                 <img src="img/features/norepeat.gif" height="60px;">
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">Non Repeating meals</h3>
+                                We donot repeat the same meals twice in a week to maintain your taste bud.
+                            </div>
+                        </div>
+                        <div class="media feature">
+                            <a class="pull-left" href="#">
+                                 <img src="img/features/triedntested.gif" height="60px;">
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">Tried And Tested</h3>
+                                Try for 1 day/1 week and subscribe if satisfied for a month plan
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+
+
+                
+
+
+            </div>
+        </section>
+
+       
+
+        
+
+
+
+        <section id="deliveryarea">
+            <div class="container-fluid">
+                <div class="section-heading inverse scrollpoint sp-effect3">
+                    <h1>Delivery Area</h1>
+                    <div class="divider"></div>
+                    <p>We are growing!  Currently we delivery only to ..</p>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-12">
+                       
+                        <div class="platforms">
+                            <a href="#" class="btn btn-primary inverse scrollpoint sp-effect1">
+                                 <i class="fa fa-map-marker fa-2x"></i>
+                                <span> Kundalahalli Gate</span>
+                                
+                            </a>                            
+                            <a href="#" class="btn btn-primary inverse scrollpoint sp-effect1">
+                                 <i class="fa fa-map-marker fa-2x"></i>
+                                <span> Spice Garden</span>
+                                
+                            </a> 
+                            <a href="#" class="btn btn-primary inverse scrollpoint sp-effect1">
+                                 <i class="fa fa-map-marker fa-2x"></i>
+                                <span> Munnekolala</span>
+                                
+                            </a> 
+                            <a href="#" class="btn btn-primary inverse scrollpoint sp-effect1">
+                                 <i class="fa fa-map-marker fa-2x"></i>
+                                <span>Marathalli Bridge</span>
+                                
+                            </a> 
+                            <a href="#" class="btn btn-primary inverse scrollpoint sp-effect1">
+                                 <i class="fa fa-map-marker fa-2x"></i>
+                                <span>SGR Dental College (Munnekolala)</span>
+                                
+                            </a> 
+
+                    </div>
+                </div>
+
+                
+
+            </div>
+        </section>
+
+        <section id="support" class="doublediagonal">
+            <div class="container">
+
+                <div class="section-heading scrollpoint sp-effect3">
+                    <h1>Refer us to a friends</h1>
+                    <div class="divider"></div>
+                     <p>You want your friends to used our service. Please refer us to grow.</p>
+                </div>
+                <div class="row">
+            
+                     
+                        <div class="row">
+                            <div class="col-md-8 col-sm-8 scrollpoint sp-effect1">
+                                <form role="form">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Your name">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Your frind's email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Your frind's Mobile ">
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea cols="30" rows="10" class="form-control" placeholder="Your message to your Friend"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                                </form>
+                            </div>
+                        
+                
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+         <!-- <section id="reviews">
+            <div class="container">
+                <div class="section-heading inverse scrollpoint sp-effect3">
+                    <h1>Reviews</h1>
+                    <div class="divider"></div>
+                    <p>Read What's The People Are Saying About Us</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 col-md-push-1 scrollpoint sp-effect3">
+                        <div class="review-filtering">
+                            <div class="review">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="review-person">
+                                            <img src="http://api.randomuser.me/portraits/women/94.jpg" alt="" class="img-responsive">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div class="review-comment">
+                                            <h3>“I love Oleose, I highly recommend it, Everyone Try It Now”</h3>
+                                            <p>
+                                                - Krin Fox
+                                                <span>
+                                                    <i class="fa fa-star fa-lg"></i>
+                                                    <i class="fa fa-star fa-lg"></i>
+                                                    <i class="fa fa-star fa-lg"></i>
+                                                    <i class="fa fa-star fa-lg"></i>
+                                                    <i class="fa fa-star-o fa-lg"></i>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review rollitin">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="review-person">
+                                            <img src="http://api.randomuser.me/portraits/men/70.jpg" alt="" class="img-responsive">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div class="review-comment">
+                                            <h3>“Oleaose Is The Best Stable, Fast App I Have Ever Experienced”</h3>
+                                            <p>
+                                                - Theodore Willis
+                                                <span>
+                                                    <i class="fa fa-star fa-lg"></i>
+                                                    <i class="fa fa-star fa-lg"></i>
+                                                    <i class="fa fa-star fa-lg"></i>
+                                                    <i class="fa fa-star-half-o fa-lg"></i>
+                                                    <i class="fa fa-star-o fa-lg"></i>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review rollitin">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="review-person">
+                                            <img src="http://api.randomuser.me/portraits/men/93.jpg" alt="" class="img-responsive">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div class="review-comment">
+                                            <h3>“Keep It Up Guys Your Work Rules, Cheers :)”</h3>
+                                            <p>
+                                                - Ricky Grant
+                                                <span>
+                                                    <i class="fa fa-star fa-lg"></i>
+                                                    <i class="fa fa-star fa-lg"></i>
+                                                    <i class="fa fa-star fa-lg"></i>
+                                                    <i class="fa fa-star-half-o fa-lg"></i>
+                                                    <i class="fa fa-star-o fa-lg"></i>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+         <section id="faq">
+            <div class="container">
+            <br>
+            <br>   
+            <div class="row">
+                <div class="col-lg-2" >
+                </div>    
+                <div class="col-lg-8" >
+                    <div class="list-group text-muted" >                         
+                          <a href="" class="list-group-item active">FAQ</a>
+                          <a href="" class="list-group-item">
+                                Q.) What happens if I do not take the meal for a few days once I pay for a month?
+                                <br>
+                                A.) We will adjust the invoice accordingly and not charge for it.
+                          </a>
+                          <a href="" class="list-group-item">
+                                Q.) How can I cancel my meal ?
+                                <br>
+                                A.) If you do not want the meal to be delivered for a single day Please call us before 3 P.m .
+                                <br>
+                                If you do not want the meal to be delivered for few days Please call and inform us in advance .
+                          </a>
+                          <a href="" class="list-group-item">
+                                Q.) Can I terminate the service mid way?
+                                <br>
+                                A.)Yes. We will refund your money for the remaining days, immediately. No questions asked.
+                          </a>
+                          
+                            <a href="" class="list-group-item">
+                                Q.) Wont I get bored of the preparation style daily?
+                                <br>
+                                A.)No. Our recipes and preparations are diversified to an extent to never make you feel that you are eating the same thing.
+                          </a>
+                            <a href="" class="list-group-item">
+                                Q.) How many times do I eat the same meal in a month?
+                                <br>
+                                A.)We would try not to repeat the meal.
+                          </a>
+                           <a href="" class="list-group-item">
+                                Q.) Can I microwave the meal easily?
+                                <br>
+                                A.)We would provide meal in hot case tiffin box so no need to microwave it.
+                          </a>
+                           <a href="" class="list-group-item">
+                                Q.) Can I microwave the meal easily?
+                                <br>
+                                A.) We would provide meal in hot case tiffin box so no need to microwave it.
+                          </a>
+                           <a href="" class="list-group-item">
+                                Q.)  Can I customize my meal?
+                                <br>
+                                A.)We would love to do that, but at this time, we do not have the ability to do that for you.
+                          </a>
+                           <a href="" class="list-group-item">
+                                Q.) What is the tiffin payment procedure ?
+                                <br>
+                                A.) Currently we are accepting only COD (6 days advance Payment) ,We would be coming soon with the payment gateway for your 
+                          </a>
+                           <a href="" class="list-group-item">
+                                Q.) What do I do if my tiffin does not get delivered to me?
+                                <br>
+                                A.) This situation would not come ,if it does happen Please call us immediately.
+                          </a>
+                            <a href="" class="list-group-item">
+                                Q.)  What if i want to order extra food/Tiffin ?
+                                <br>
+                                A.) Please inform us , we would try to serve you as best as possible Or you can avail our 1 day ordering facility.
+                          </a>
+                         
+                        </div>
+                    
+                </div>
+            </div>
+             </div>
+         </section>       
+
+         <!-- Modal -->
+   <!--  <div class="modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Login to TiffinWaale</h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+                 <div class="col-md-4">
+                     <a  href="{{fbredirectionUrl}}"><img width="250px" src="img/facebook.png">  </a> 
+                      <br>
+                      <br>
+                     <a  href="#"><img width="250px" src="img/google.png">  </a> 
+                     <hr> 
+                      <p class="text-danger text-muted"><font size="2" >We'll <strong>never</strong> post 
+                            without your permission.</font></p>
+                     <hr>       
+                 </div>
+                <div class="col-md-2">
+                 <br>
+                 <br>
+                 <br>
+                  or
+                  <br>
+                 <br>
+                 <br>
+                </div> 
+                 <div class="col-md-4">
+                   
+                           <form  name="loginform" novalidate>
+                                    <div class="messagecontainer"></div>
+                                    <p class="signin signup forgotpwd">Email:<br>
+                                      <input type="email" name="email" class="form-control" ng-model="email" required>
+                                      <span style="color:red" ng-show="loginform.email.$dirty && loginform.email.$invalid">
+                                      <span ng-show="loginform.email.$error.required">Email is required.</span>
+                                      <span ng-show="loginform.email.$error.email">Invalid email address.</span>
+                                      </span>
+                                    </p>
+
+                                    <p class="signin signup">Password:<br>
+                                      <input type="password" name="password" class="form-control" id="exampleInputPassword1" ng-model="password" required>
+                                      <span style="color:red" ng-show="loginform.password.$dirty && loginform.password.$invalid">
+                                      <span ng-show="loginform.password.$error.required">Password is required.</span>
+                                      </span>
+                                    </p>
+
+                                     <p class="signup ">Confirm Password:<br>
+                                          <input type="password" name="confirm_password" class="form-control" ng-model="confirm_password" required>
+                                          <span style="color:red" ng-show="loginform.confirm_password.$dirty && loginform.confirm_password.$invalid">
+                                          <span ng-show="loginform.confirm_password.$error.required">Password is required.</span>
+                                          </span>
+                                    </p>
+
+                                     <p class="signup ">Name:<br>
+                                          <input type="text" name="name" class="form-control" id="exampleInputPassword1" ng-model="name" required>
+                                          <span style="color:red" ng-show="loginform.name.$dirty && loginform.name.$invalid">
+                                          <span ng-show="loginform.name.$error.required">Name is required.</span>
+                                          </span>
+                                    </p>
+
+                                     <p  class="signup">Mobile:<br>
+                                          <input type="text" name="mobile" class="form-control" id="exampleInputPassword1" ng-model="mobile" required>
+                                          <span style="color:red" ng-show="loginform.mobile.$dirty && loginform.mobile.$invalid">
+                                          <span ng-show="loginform.mobile.$error.required">Mobile  is required.</span>
+                                          </span>
+                                    </p>
+
+                                    <p  class="signup">
+                                      <button ng-disabled="loginform.password.$invalid ||
+                                          loginform.email.$invalid" ng-click="login('registration')" class="btn pull-center btn-primary" >Sign up</button>
+                                    </p>
+
+
+                                     <p  class="forgotpwd">
+                                          <button ng-disabled="loginform.email.$invalid" 
+                                          ng-click="login('forgotpassword')" class="btn pull-center btn-primary">
+                                          Forgot Password</button>
+                                     </p>                                
+
+                                    <p class="signin">
+                                       <button ng-disabled="loginform.password.$invalid ||
+                                      loginform.email.$invalid" ng-click="login('login')" class="btn pull-center btn-primary" >Sign In</button>
+                                    </p>
+
+                                    <hr>
+                                    <a href ng-click="logindialog('forgotpwd')" class="text-muted">Forgot Password </a> | <a href ="" ng-click="logindialog('signup')" class="toggle text-muted">Create a new account </a> 
+                        </form>
+
+                           
+
+                        
+                 </div>
+
+             </div>
+          </div>
+         
+        </div>
+      </div>
+    </div> -->
+    <!-- end of login model -->
+
+    <!-- order modal -->
+
+    <div class="modal fade" id="ordermodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+      <div class="modal-dialog " role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Select your location</h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+                  <div class="col-md-8">
+                    <select id="schemeselect"  class="form-control" ng-model="deliverylocation" />  
+                        <option ng-repeat= "deliverylocation in delivery_locations"> {{deliverylocation}}</option>
+                  </select>
+                  </div>
+                  <div class="col-md-4">
+                     <button  ng-click="locationSelect()" class="btn pull-center btn-primary" >Submit</button>
+                  </div>
+             </div>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+    <!-- end order mocdal -->
+
+    
+
+        <footer>
+            <div class="container">
+                <a href="#" class="scrollpoint sp-effect3">
+                    <img src="img/berry/logo.png" alt="" class="logo">
+                </a>
+                <div class="social">
+                    <a href="#" class="scrollpoint sp-effect3"><i class="fa fa-google-plus fa-lg"></i></a>
+                    <a href="#" class="scrollpoint sp-effect3"><i class="fa fa-facebook fa-lg"></i></a>
+                </div>
+                <div class="rights">
+                    <p>Copyright &copy; 2014</p>
+                    <p>{{address}}</p>
+                    <p>{{contact_number}}</p>
+                    <!-- <p>Developed by <a href="http://www.scoopthemes.com" target="_blank">Ruhul Amin Mazumder</a></p> -->
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/placeholdem.min.js"></script>
+    <script src="js/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+    <script src="js/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/daterangepicker.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/tiffinwaaleapp.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            appMaster.preLoader();
+        });
+    </script>
+</body>
+
+</html>

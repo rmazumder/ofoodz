@@ -1,0 +1,5 @@
+[27-Oct-2015 18:20:26 Etc/UTC] PHP Fatal error:  Uncaught exception 'phpmailerException' with message 'Invalid address: MAIL_USER' in /home/ofoodz/public_html/php/mail/class.phpmailer.php:927
+Stack trace:
+#0 /home/ofoodz/public_html/php/mail/scheduler.php(21): PHPMailer->setFrom('MAIL_USER', 'OfoodZ.com')
+#1 {main}
+  thrown in /home/ofoodz/public_html/php/mail/class.phpmailer.php on line 927

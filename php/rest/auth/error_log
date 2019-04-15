@@ -1,0 +1,49 @@
+[06-Oct-2015 20:23:46 Etc/UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'The default access token must be of type "string" or Facebook\AccessToken' in /home/ofoodz/public_html/php/rest/auth/Facebook/Facebook.php:298
+Stack trace:
+#0 /home/ofoodz/public_html/php/rest/auth/fb-login-callback.php(17): Facebook\Facebook->setDefaultAccessToken(NULL)
+#1 {main}
+  thrown in /home/ofoodz/public_html/php/rest/auth/Facebook/Facebook.php on line 298
+[06-Oct-2015 20:34:46 Etc/UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'The default access token must be of type "string" or Facebook\AccessToken' in /home/ofoodz/public_html/php/rest/auth/Facebook/Facebook.php:298
+Stack trace:
+#0 /home/ofoodz/public_html/php/rest/auth/fb-login-callback.php(17): Facebook\Facebook->setDefaultAccessToken(NULL)
+#1 {main}
+  thrown in /home/ofoodz/public_html/php/rest/auth/Facebook/Facebook.php on line 298
+[06-Oct-2015 20:55:34 UTC] PHP Warning:  require_once(/home/ofoodz/public_html/php/rest/auth\googleapi\src\Google\autoload.php): failed to open stream: No such file or directory in /home/ofoodz/public_html/php/rest/auth/google-login.php on line 2
+[06-Oct-2015 20:55:34 UTC] PHP Fatal error:  require_once(): Failed opening required '/home/ofoodz/public_html/php/rest/auth\googleapi\src\Google\autoload.php' (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/ofoodz/public_html/php/rest/auth/google-login.php on line 2
+[06-Oct-2015 20:58:49 UTC] PHP Warning:  require_once(/home/ofoodz/public_html/php/rest/auth\googleapi\src\Google\autoload.php): failed to open stream: No such file or directory in /home/ofoodz/public_html/php/rest/auth/google-login.php on line 2
+[06-Oct-2015 20:58:49 UTC] PHP Fatal error:  require_once(): Failed opening required '/home/ofoodz/public_html/php/rest/auth\googleapi\src\Google\autoload.php' (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/ofoodz/public_html/php/rest/auth/google-login.php on line 2
+[07-Oct-2015 08:58:27 Etc/UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'The default access token must be of type "string" or Facebook\AccessToken' in /home/ofoodz/public_html/php/rest/auth/Facebook/Facebook.php:298
+Stack trace:
+#0 /home/ofoodz/public_html/php/rest/auth/fb-login-callback.php(17): Facebook\Facebook->setDefaultAccessToken(NULL)
+#1 {main}
+  thrown in /home/ofoodz/public_html/php/rest/auth/Facebook/Facebook.php on line 298
+[07-Oct-2015 09:16:03 Etc/UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'The default access token must be of type "string" or Facebook\AccessToken' in /home/ofoodz/public_html/php/rest/auth/Facebook/Facebook.php:298
+Stack trace:
+#0 /home/ofoodz/public_html/php/rest/auth/fb-login-callback.php(17): Facebook\Facebook->setDefaultAccessToken(NULL)
+#1 {main}
+  thrown in /home/ofoodz/public_html/php/rest/auth/Facebook/Facebook.php on line 298
+[07-Oct-2015 17:36:28 Etc/UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'The default access token must be of type "string" or Facebook\AccessToken' in /home/ofoodz/public_html/php/rest/auth/Facebook/Facebook.php:298
+Stack trace:
+#0 /home/ofoodz/public_html/php/rest/auth/fb-login-callback.php(17): Facebook\Facebook->setDefaultAccessToken(NULL)
+#1 {main}
+  thrown in /home/ofoodz/public_html/php/rest/auth/Facebook/Facebook.php on line 298
+[09-Oct-2015 09:20:00 Etc/UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'The default access token must be of type "string" or Facebook\AccessToken' in /home/ofoodz/public_html/php/rest/auth/Facebook/Facebook.php:298
+Stack trace:
+#0 /home/ofoodz/public_html/php/rest/auth/fb-login-callback.php(17): Facebook\Facebook->setDefaultAccessToken(NULL)
+#1 {main}
+  thrown in /home/ofoodz/public_html/php/rest/auth/Facebook/Facebook.php on line 298
+[09-Oct-2015 09:20:01 Etc/UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'The default access token must be of type "string" or Facebook\AccessToken' in /home/ofoodz/public_html/php/rest/auth/Facebook/Facebook.php:298
+Stack trace:
+#0 /home/ofoodz/public_html/php/rest/auth/fb-login-callback.php(17): Facebook\Facebook->setDefaultAccessToken(NULL)
+#1 {main}
+  thrown in /home/ofoodz/public_html/php/rest/auth/Facebook/Facebook.php on line 298
+[15-Oct-2015 08:21:54 Etc/UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'The default access token must be of type "string" or Facebook\AccessToken' in /home/ofoodz/public_html/php/rest/auth/Facebook/Facebook.php:298
+Stack trace:
+#0 /home/ofoodz/public_html/php/rest/auth/fb-login-callback.php(17): Facebook\Facebook->setDefaultAccessToken(NULL)
+#1 {main}
+  thrown in /home/ofoodz/public_html/php/rest/auth/Facebook/Facebook.php on line 298
+[24-Oct-2015 16:28:50 Etc/UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'The default access token must be of type "string" or Facebook\AccessToken' in /home/ofoodz/public_html/php/rest/auth/Facebook/Facebook.php:298
+Stack trace:
+#0 /home/ofoodz/public_html/php/rest/auth/fb-login-callback.php(17): Facebook\Facebook->setDefaultAccessToken(NULL)
+#1 {main}
+  thrown in /home/ofoodz/public_html/php/rest/auth/Facebook/Facebook.php on line 298
